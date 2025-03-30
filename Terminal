@@ -1,0 +1,28 @@
+dotnet new classlib -n MyLibrary
+cd MyLibrary
+<Project Sdk="Microsoft.NET.Sdk">
+
+MyLibrary.csproj
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>MyLibrary.Utils</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>ВашеИмя</Authors>
+    <Company>ВашаКомпания</Company>
+    <Description>Утилиты для работы со строками</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>string utils conversion</PackageTags>
+    <RepositoryUrl>https://github.com/your-repo</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
+
+dotnet build --configuration Release
+dotnet pack --configuration Release
+
+тестовый
+dotnet new console -n TestApp
+cd TestApp
+dotnet add package MyLibrary.Utils --source "../MyLibrary/bin/Release"
+
+dotnet run
